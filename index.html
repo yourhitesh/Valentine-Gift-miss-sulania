@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For MISS.SULANIA ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@900&family=Playfair+Display:ital,wght@1,900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --primary-pink: #ff0a54;
+            --hot-pink: #ff477e;
+            --purple-love: #7000ff;
+            --bg-gradient: linear-gradient(135deg, #fff0f3 0%, #ffccd5 100%);
+        }
+
+        body {
+            margin: 0; background: var(--bg-gradient);
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden; height: 100vh;
+            display: flex; justify-content: center; align-items: center;
+        }
+
+        .container {
+            text-align: center; background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px); padding: 40px;
+            border-radius: 40px; border: 6px solid white;
+            box-shadow: 0 30px 60px rgba(112, 0, 255, 0.25);
+            z-index: 10; max-width: 440px; width: 85%;
+            min-height: 520px; display: flex; flex-direction: column; justify-content: center;
+            position: relative;
+        }
+
+        .user-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.8rem; letter-spacing: 3px;
+            background: linear-gradient(to bottom, #ff0a54, #7000ff);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            display: inline-block; margin-bottom: 10px;
+            animation: pulseGlow 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+
+        h1 { 
+            font-weight: 900; color: var(--primary-pink); 
+            font-size: 1.8rem; letter-spacing: -1px; margin-bottom: 20px;
+            line-height: 1.1; text-transform: uppercase;
+        }
+
+        .romantic-text {
+            font-family: 'Playfair Display', serif; font-style: italic;
+            font-weight: 900; font-size: 2.3rem; color: var(--purple-love);
+            display: block; margin-bottom: 15px;
+        }
+
+        .quote-text {
+            font-weight: 700; color: #222;
+            font-size: 1.3rem; line-height: 1.4; min-height: 100px;
+        }
+
+        /* SEPARATED BUTTONS CONTAINER */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px; border: none; border-radius: 50px;
+            font-family: 'Montserrat', sans-serif; font-weight: 900;
+            font-size: 1.1rem; text-transform: uppercase;
+            cursor: pointer; transition: 0.3s;
+            color: white; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-1 { background: var(--primary-pink); }
+        .btn-2 { background: var(--purple-love); }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .heart-bg { position: absolute; pointer-events: none; z-index: 1; top: -10vh; }
+        img { width: 100%; border-radius: 25px; margin-top: 20px; border: 5px solid white; }
+        #slideshow, #gifGallery, #finalMessage { display: none; opacity: 0; }
+    </style>
+</head>
+<body>
+
+    <audio id="loveSong" loop preload="auto">
+        <source src="https://raw.githubusercontent.com/yourhitesh/Valentine-Gift/main/TRIM%20SONG.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container" id="mainCard">
+        <div id="questionArea">
+            <div class="user-name">MISS.SULANIA</div>
+            <span class="romantic-text">My Dearest Wife,</span>
+            <h1>WILL YOU BE MY VALENTINE FOREVER?</h1>
+            <div class="btn-container">
+                <button class="btn btn-1" onclick="startStory()">HA</button>
+                <button class="btn btn-2" onclick="startStory()">JI BILKUL</button>
+            </div>
+        </div>
+
+        <div id="slideshow">
+            <div class="user-name">MISS.SULANIA</div>
+            <span class="romantic-text">Just for You...</span>
+            <div class="quote-text" id="quote-display"></div>
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHY0Zmt0anQzMnR5MDk0MW50bWo0aG85cHh4OWk0aWw0MTB5amYyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FzVkVPiBjqeNG/giphy.gif">
+        </div>
+
+        <div id="gifGallery">
+            <span class="romantic-text">Memories...</span>
+            <p id="gif-caption" style="font-weight:900; color:var(--primary-pink); text-transform: uppercase;"></p>
+            <img id="gallery-img" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjhobmE2ZnpiYmpodHVzdjhhOXV3MHdya3pnOW43bDk4bTlmaTNkdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FAwS0vEBiKDil7oQG0/giphy.gif">
+        </div>
+
+        <div id="finalMessage">
+            <div class="user-name">MISS.SULANIA</div>
+            <span class="romantic-text">I Love You!</span>
+            <h1>FOREVER YOURS ❤️</h1>
+            <p style="font-weight: 900; color: var(--purple-love);">HAPPY VALENTINE'S DAY, MISS.SULANIA!</p>
+            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWR5NjVkdXcyZGNncHM3NG0yeWZ1NGxsY2Uzb2R1Y3RmMWMwcG0yYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IeKWhjHW4cclaAAdu1/giphy.gif">
+        </div>
+    </div>
+
+    <script>
+        const quotes = [
+            "In your smile, I see something more beautiful than the stars. ✨",
+            "Being your husband is the greatest honor of my life. 💍",
+            "You are my today and all of my tomorrows. ❤️"
+        ];
+
+        const galleryGifs = [
+            { url: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjhobmE2ZnpiYmpodHVzdjhhOXV3MHdya3pnOW43bDk4bTlmaTNkdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FAwS0vEBiKDil7oQG0/giphy.gif", text: "ENDLESS CUDDLES!" },
+            { url: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjhobmE2ZnpiYmpodHVzdjhhOXV3MHdya3pnOW43bDk4bTlmaTNkdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FAwS0vEBiKDil7oQG0/giphy.gif", text: "YOU ARE MY HAPPINESS!" }
+        ];
+
+        let qIndex = 0, gIndex = 0;
+
+        function startStory() {
+            const song = document.getElementById('loveSong');
+            song.play();
+
+            gsap.to("#questionArea", { opacity: 0, duration: 0.5, onComplete: () => {
+                document.getElementById('questionArea').style.display = 'none';
+                document.getElementById('slideshow').style.display = 'block';
+                gsap.to("#slideshow", { opacity: 1, duration: 0.5 });
+                showNextQuote();
+                setInterval(createHeart, 250);
+            }});
+        }
+
+        function showNextQuote() {
+            if (qIndex < quotes.length) {
+                const qDisplay = document.getElementById('quote-display');
+                gsap.to(qDisplay, { opacity: 0, y: -20, duration: 0.5, onComplete: () => {
+                    qDisplay.innerText = quotes[qIndex++];
+                    gsap.to(qDisplay, { opacity: 1, y: 0, duration: 0.5 });
+                    setTimeout(showNextQuote, 3000);
+                }});
+            } else { startGallery(); }
+        }
+
+        function startGallery() {
+            gsap.to("#slideshow", { opacity: 0, duration: 0.5, onComplete: () => {
+                document.getElementById('slideshow').style.display = 'none';
+                document.getElementById('gifGallery').style.display = 'block';
+                gsap.to("#gifGallery", { opacity: 1, duration: 0.5 });
+                showNextGif();
+            }});
+        }
+
+        function showNextGif() {
+            if (gIndex < galleryGifs.length) {
+                const img = document.getElementById('gallery-img'), cap = document.getElementById('gif-caption');
+                gsap.to([img, cap], { opacity: 0, duration: 0.5, onComplete: () => {
+                    img.src = galleryGifs[gIndex].url;
+                    cap.innerText = galleryGifs[gIndex].text;
+                    gsap.to([img, cap], { opacity: 1, duration: 0.5 });
+                    gIndex++;
+                    setTimeout(showNextGif, 3500);
+                }});
+            } else { showFinal(); }
+        }
+
+        function showFinal() {
+            gsap.to("#gifGallery", { opacity: 0, duration: 0.8, onComplete: () => {
+                document.getElementById('gifGallery').style.display = 'none';
+                document.getElementById('finalMessage').style.display = 'block';
+                gsap.to("#finalMessage", { opacity: 1, scale: 1.05, duration: 1, ease: "back.out" });
+            }});
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-bg');
+            const icons = ['❤️', '💖', '💝', '💕', '💜', '🌸', '✨'];
+            heart.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            document.body.appendChild(heart);
+            gsap.to(heart, { y: '115vh', x: (Math.random() - 0.5) * 200, rotation: 360, duration: Math.random() * 3 + 4, onComplete: () => heart.remove() });
+        }
+    </script>
+</body>
+</html>
+</html>
